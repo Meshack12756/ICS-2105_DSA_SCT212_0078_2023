@@ -9,5 +9,5 @@ def has_duplicate(numbers_list):
             return True
     return False
 
-print(has_duplicate([1,2,4,8,2,7,3]))
-print(has_duplicate([11,12,10,6,15]))
+print(has_duplicate([10,22,4,18,22,7,37]))
+print(has_duplicate([11,12,10,51,15]))
