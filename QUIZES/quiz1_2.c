@@ -1,22 +1,40 @@
-// 2. Rotate Array
+#include <stdio.h>
 
-void rotate (int nums, int numsSize, int k) {
-    k = k % numsSize return 0;
-}
-    void reverse (int nums, int start, int end) {
-        while (start < end) {
-            int temp = nums[start];
-            int [start] = nums [end];
-            nums[end] = temp
-            start++;
-            end--;
-        } 
+void flipArray(int*arr,int left,int right){
+    while (left<right){
+        int tmp=arr[left];
+        arr[left]=arr[right];
+        arr[right]=tmp;
+
+        left++;
+        right--;
     }
-    reverse (nums, 0, numsSize - 1);
-    reverse (nums, 0, k-1);
-    reverse (nums, k, numsSize - 1)
-// Explanation:
-      /*The above algorithm reverses the arrangement of elements in the array to the right to achieve rotation.
-Should k be higher than the array size, it is handled by the first expression in the algorithm. 
-Since k is a non-integer, the elements in the array is reversed entirely, then reverse the first k elements then reverse the remaining elements, all to the right.
-*/
+}
+void rotateArray(int*arr,int arr_len,int shift){
+    shift=shift%arr_len;
+
+    flipArray(arr,0,arr_len-1);
+    flipArray(arr,0,shift-1);
+    flipArray(arr,shift,arr_len-1);
+}
+int main(){
+    int test[]={23, 24, 25, 26, 27, 28};
+    int len=sizeof(test)/sizeof(test[0]);
+    int k=3;
+
+    printf("Before rotation:");
+    for(int i=0; i<len; i++){
+        printf("%d", test[i]);
+    }
+    printf("I\n");
+
+    rotateArray(test,len,k);
+
+    printf("After rotation:");
+    for(int i=0; i<len; i++){
+        printf("%d", test[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
