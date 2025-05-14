@@ -1,21 +1,32 @@
-// 1. Removing Duplicates from sorted arrays
+#include <stdio.h>
 
-int removeDuplicate(int * nums, int numsSize) {
-    if numsSize == 0 return 0;
-    
-    int j = 0;
-    for (int i=1; i < numsSize; i++) {
-        if (numsSize[i] != nums[j] {
-            j++
-            nums[j] = nums[i]
+int removeDuplicate(int* nums, int numSize){
+    if (numSize==0){
+        return 0;
+    }
+    int i=0;
+    for(int j=1; j<numSize;j++){
+        if(nums[j] != nums[i]){
+        i++;
+        nums[i] = nums[j];
         }
     }
-    return j + 1;
+    return i+1;
 }
-// Explanaation
-/*In the example above, two pointers are used:
-	j --> keep track of where to place
-	i --> Scan through the array
-Since the arrays are sorted, duplicate numbers are adjacent to each other. This way, when a unique number is identified, it is moved to position j + 1 and j is incremented. 
-This ensures removal of duplicates.
-*/
+
+int main(){
+    int nums[]={1,1,2,3,4,5,6,6};
+    int size=sizeof(nums)/sizeof(nums[0]);
+    int newLength=removeDuplicate(nums,size);
+
+    printf("New Length: %d\n", newLength);
+
+    for (int i=0; i<newLength; i++){
+        printf("%d",nums[i]);
+    }
+    printf("\n");
+
+    return 0;
+
+}
+
