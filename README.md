@@ -1,7 +1,7 @@
 # ICS-2105_DSA_SCT212_0078_2023
 ## Student Information:
 **Name**: Ochieng' Meshack Otieno
-**Admission** No: SCT22-0078/2023
+**Admission** No: SCT212-0078/2023
 
 ## Course information:
 **Course**: COMPUTER TECHNOLOGY
